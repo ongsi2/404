@@ -60,5 +60,4 @@ public class MallServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
 	}
-
 }
