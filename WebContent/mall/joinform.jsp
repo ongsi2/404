@@ -19,7 +19,7 @@
 
 
 <tr>
-<td><font size="4">비밀d번호</font></td>
+<td><font size="4">비밀uyy번호</font></td>
 <td> <input type="password" name="pw"></td>
 
 <tr >
