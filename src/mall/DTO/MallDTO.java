@@ -12,7 +12,7 @@ public class MallDTO {
     private String address;	// 林家
     private String address2	;	// 惑技林家
     private String mobile; 		// 烹脚荤
-    private String phone1;
+    private String phone;
     private String phone2;
     private String phone3;
     private int point;		//int
