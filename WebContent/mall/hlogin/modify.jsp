@@ -2,27 +2,39 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<body >
-<h2>회원가입</h2>
-<form action="joinformPro.mall" method="post">
-<table border="1">
 
+<body >
+<title>회원정보수정</title>
+<form method="post" action="modifyPro.mall" name="userinput">
+<table width="600" border="1" cellspacing="0" cellpadding="3"  align="center">
 <tr>
 <td><font size="4">이름</font></td>
-<td>  <input type="text" name="name"></td>
+<td>  ${m.name}</td>
 </tr>
 
 <tr>
 <td><font size="4">아이디</font></td>
-<td> <input type="text" name="id"></td>
+<td> ${m.id}
 </tr>
 
 
 <tr>
 <td><font size="4">비밀번호</font></td>
-<td> <input type="password" name="pw"></td>
+<td> <input type="password" name="pw" value="${m.pw}"></td>
 
+<tr>
+<td><font size="4">이메일</font></td>
+<td> <input type="text" name="mail" value="${m.mail}">@
+<select name="mailaddress" value="${m.mailaddress}" >
+              <option>naver.com</option>
+              <option>daum.net</option>
+              <option>gmail.com</option>
+              
+              
+      </select>
+</td>
 <tr >
+
 <td><font size="4">주소</font></td>
 <td>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -67,38 +79,34 @@
 
 
 
-<input type="text" id="zipcode" placeholder="우편번호">
+<input type="text" id="zipcode"  name="zipcode" value="${m.zipcode}" placeholder="우편번호">
 <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" size="50" id="address" placeholder="주소" ><br>
-<input type="text" width="110" id="address2" placeholder="상세주소">
+<input type="text" size="50" id="address" name="address" value="${m.address}" placeholder="주소" ><br>
+<input type="text" width="110" id="address2" name="address2"  value="${m.address2}"placeholder="상세주소">
 </td>
 
 
 <tr>
 <td><font size="4">핸드폰번호</font></td>
 <td>
- <select name="mobile"><option>skt</option>
+ <select name="mobile" value="${m.mobile}"><option>skt</option>
               <option>kt</option>
               <option>u+</option>
       </select>
 
-<select name="phone"><option>010</option>
+<select name="phone" value="${m.phone }"><option>010</option>
               <option>011</option>
               <option>016</option>
               <option>017</option>
       </select>
-<input type="text" name="phone2">-<input type="text" name="phone3" >   
+<input type="text" name="phone2" value="${m.phone2 }">-<input type="text" name="phone3" value="${m.phone3 }" >   
  </td>
- </tr>     
-
-<tr ><td colspan="3" align="center" >
-<input type="submit" value="확인">
+ </tr>   
+ <td></td>  
+<td align="center">
+<input type="submit"  >
 <input type="button" value="취소" onclick="window.location='main.mall'">
-</tr></td>
-
-
-
+</td>
 </table>
-</form>
-</body>
+</form></body>
 

@@ -5,6 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MainAction implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response){
-	return "mall/main.jsp";
+	return "mall/hlogin/main.jsp";
 	}
 }
