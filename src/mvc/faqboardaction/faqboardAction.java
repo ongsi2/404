@@ -49,6 +49,6 @@ public class faqboardAction implements SuperAction {
 	    request.setAttribute("pageSize", new Integer(pageSize));
 		request.setAttribute("number", new Integer(number));
 		request.setAttribute("articleList", articleList);
-	    return "mall/faqboard/faqboard.jsp";
+	    return "/mall/faqboard/faqboard.jsp";
 	}
 }

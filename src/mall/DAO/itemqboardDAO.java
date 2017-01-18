@@ -155,65 +155,23 @@ public class itemqboardDAO {
 		return articleList;
 	}
 	
-	public List getArticles2(int start, int end) throws Exception {
+	public MallDTO getArticle(int num) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List articleList2=null;
+		MallDTO article=null;
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-					"select num,writer,content,orgname,sysname,readcount,reg_date,r "
-					+
-					"from (select num,writer,content,orgname,sysname,readcount,reg_date,rownum r "+
-					"from (select num,writer,content,orgname,sysname,readcount,reg_date "+
-					"from fileboard2 order by num desc) order by num desc ) where r >= ? and r <= ? ");
-					pstmt.setInt(1, start);
-					pstmt.setInt(2, end);
-					rs = pstmt.executeQuery();
-					if (rs.next()) {
-						articleList2 = new ArrayList(end); 
-						do{ 
-							dto article2= new dto();
-							article2.setNum(rs.getInt("num"));
-							article2.setWriter(rs.getString("writer"));
-							article2.setCt(rs.getString("content"));
-							article2.setOrg(rs.getString("orgname"));
-							article2.setSys(rs.getString("orgname"));
-							article2.setReadcount(rs.getInt("readcount"));
-							article2.setReg_date(rs.getTimestamp("reg_date"));
-							articleList2.add(article2); 
-						}while(rs.next());
-					}
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-			if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-			if (conn != null) try { conn.close(); } catch(SQLException ex) {}
-		}
-
-		
-		return articleList2;
-	}
-	
-	public dto getArticle(int num) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		dto article=null;
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(
-			"update fileboard set readcount=readcount+1 where num = ?"); 
+			"update itemqboard set readcount=readcount+1 where num = ?"); 
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();
 			pstmt = conn.prepareStatement(
-			"select * from fileboard where num = ?"); 
+			"select * from itemqboard where num = ?"); 
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				article = new dto();
+				article = new MallDTO();
 				article.setNum(rs.getInt("num"));
 				article.setWriter(rs.getString("writer"));
 				article.setEmail(rs.getString("email"));
@@ -226,6 +184,9 @@ public class itemqboardDAO {
 				article.setRe_level(rs.getInt("re_level"));
 				article.setContent(rs.getString("content"));
 				article.setIp(rs.getString("ip"));
+				article.setCt(rs.getString("ct"));
+				article.setOrg(rs.getString("orgname"));
+				article.setSys(rs.getString("sysname"));
 			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -237,41 +198,6 @@ public class itemqboardDAO {
 			return article;
 	}
 	
-	public dto getArticle2(int num) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		dto article2=null;
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(
-			"update fileboard2 set readcount=readcount+1 where num = ?"); 
-			pstmt.setInt(1, num);
-			pstmt.executeUpdate();
-			pstmt = conn.prepareStatement("select * from fileboard2 where num = ?");
-			pstmt.setInt(1, num);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				article2 = new dto();
-				article2.setWriter(rs.getString("writer"));
-				article2.setCt(rs.getString("content"));
-				article2.setOrg(rs.getString("orgname"));
-				article2.setSys(rs.getString("sysname"));
-				article2.setReadcount(rs.getInt("readcount"));
-				article2.setReg_date(rs.getTimestamp("reg_date"));
-			}
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-			if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-			if (conn != null) try { conn.close(); } catch(SQLException ex) {}
-		}
-		
-		return article2;
-	}
-	
-
 	public int deleteArticle(int num, String passwd) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -281,19 +207,15 @@ public class itemqboardDAO {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-			"select passwd from fileboard where num = ?");
+			"select passwd from itemqboard where num = ?");
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				dbpasswd= rs.getString("passwd");
 				if(dbpasswd.equals(passwd)){
 					pstmt = conn.prepareStatement(
-					"delete from fileboard where num=?");
+					"delete from itemqboard where num=?");
 					pstmt.setInt(1, num);
-					pstmt.executeUpdate();
-					
-					pstmt= conn.prepareStatement("delete from fileboard2 where num=?");
-					pstmt.setInt(1,  num);
 					pstmt.executeUpdate();
 					x= 1; 
 				}else
@@ -311,19 +233,19 @@ public class itemqboardDAO {
 	
 	
 	
-	public dto updateGetArticle(int num) throws Exception {
+	public MallDTO updateGetArticle(int num) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		dto article=null;
+		MallDTO article=null;
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-			"select * from fileboard where num = ?"); 
+			"select * from itemqboard where num = ?"); 
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				article = new dto();
+				article = new MallDTO();
 				article.setNum(rs.getInt("num"));
 				article.setWriter(rs.getString("writer"));
 				article.setEmail(rs.getString("email"));
@@ -336,6 +258,10 @@ public class itemqboardDAO {
 				article.setRe_level(rs.getInt("re_level"));
 				article.setContent(rs.getString("content"));
 				article.setIp(rs.getString("ip"));
+				article.setCt(rs.getString("ct"));
+				article.setOrg(rs.getString("orgname"));
+				article.setSys(rs.getString("sysname"));
+				
 			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -348,74 +274,34 @@ public class itemqboardDAO {
 		return article;
 	}
 	
-	public dto updateGetArticle2(int num) throws Exception {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		dto article2=null;
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(
-			"select * from fileboard2 where num = ?"); 
-			pstmt.setInt(1, num);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				article2 = new dto();
-				article2.setWriter(rs.getString("writer"));
-				article2.setCt(rs.getString("content"));
-				article2.setOrg(rs.getString("orgname"));
-				article2.setSys(rs.getString("sysname"));
-				article2.setReadcount(rs.getInt("readcount"));
-				article2.setReg_date(rs.getTimestamp("reg_date"));
-			}
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
-			if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
-			if (conn != null) try { conn.close(); } catch(SQLException ex) {}
-		}
-
-		return article2;
-	}
-	
-	
-
-	public int updateArticle(dto article) throws Exception {
+	public int updateArticle(MallDTO article) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
 		String dbpasswd="";
 		String sql="";
-		String sql2="";
 		int x=-1;
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-			"select passwd from fileboard where num = ?");
+			"select passwd from itemqboard where num = ?");
 			pstmt.setInt(1, article.getNum());
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				dbpasswd= rs.getString("passwd"); 
 				if(dbpasswd.equals(article.getPasswd())){
-					sql="update fileboard set writer=?,email=?,subject=?,passwd=?";
-					sql+=",content=? where num=?";
+					sql="update itemqboard set writer=?,email=?,subject=?,passwd=?";
+					sql+=",content=?,ct=?,orgname=?,sysname=? where num=?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, article.getWriter());
 					pstmt.setString(2, article.getEmail());
 					pstmt.setString(3, article.getSubject());
 					pstmt.setString(4, article.getPasswd());
 					pstmt.setString(5, article.getContent());
-					pstmt.setInt(6, article.getNum());
-					pstmt.executeUpdate();
-					
-					sql2="update fileboard2 set writer=?,content=?,orgname=?,sysname=? where num=?";
-					pstmt = conn.prepareStatement(sql2);
-					pstmt.setString(1, article.getWriter());
-					pstmt.setString(2, article.getContent());
-					pstmt.setString(3, article.getOrg());
-					pstmt.setString(4, article.getSys());
-					pstmt.setInt(5, article.getNum());
+					pstmt.setString(6, article.getCt());
+					pstmt.setString(7, article.getOrg());
+					pstmt.setString(8, article.getSys());
+					pstmt.setInt(9, article.getNum());
 					pstmt.executeUpdate();
 					x= 1;
 				}else{
@@ -431,8 +317,5 @@ public class itemqboardDAO {
 		}
 		return x;
 	}
-	
-	
-	
 }
-}
+

@@ -11,4 +11,6 @@
 <td><input type="submit" value="로그인"></input>
 <input type="button" value="회원가입" onclick="window.location='joinform.mall'">
 <input type="button" value="FAQ게시판" onclick="window.location='faqboard.mall'">
+<input type="button" value="공지사항" onclick="window.location='noticeboard.mall'">
+<input type="button" value="상품문의게시판" onclick="window.location='itemqboard.mall'">
 </body>
