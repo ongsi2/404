@@ -1,8 +1,10 @@
-package img.action;
+package mvc.itemqboardaction;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class writeFormAction implements SuperAction {
+import mvc.action.SuperAction;
+
+public class itemqwriteFormAction implements SuperAction {
 
     public String executeAction(HttpServletRequest request, HttpServletResponse response){
         int num=0,ref=1,re_step=0,re_level=0;  
@@ -19,6 +21,6 @@ public class writeFormAction implements SuperAction {
         request.setAttribute("re_step", new Integer(re_step));
         request.setAttribute("re_level", new Integer(re_level));
 
-        return "/imageboard/writeForm.jsp";
+        return "/mall/itemqboard/itemqwriteForm.jsp";
     }
 }

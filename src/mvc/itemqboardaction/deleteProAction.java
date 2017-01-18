@@ -1,4 +1,4 @@
-package img.action;
+package mvc.itemqboardaction;
 
 import java.io.UnsupportedEncodingException;
 

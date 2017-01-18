@@ -1,4 +1,4 @@
-package img.action;
+package mvc.itemqboardaction;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
@@ -12,19 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import imageboard.dao;
-import imageboard.dto;
+import mall.DAO.itemqboardDAO;
+import mall.DTO.MallDTO;
+import mvc.action.SuperAction;
 
-public class writeFormProAction  implements SuperAction{
+public class itemqwriteFormProAction  implements SuperAction{
 
 	public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String path = request.getRealPath("save");
 		System.out.println(path);
 		int max = 1024*1024*10;
-		String enc="euc-kr";
+		String enc="UTF-8";
 		DefaultFileRenamePolicy df =new DefaultFileRenamePolicy();
         try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
@@ -32,7 +33,7 @@ public class writeFormProAction  implements SuperAction{
         	MultipartRequest multi = new MultipartRequest(request, path, max, enc, df);
 
         File save = multi.getFile("save");
-        dto article = new dto();
+        MallDTO article = new MallDTO();
 		article.setNum(Integer.parseInt(multi.getParameter("num")));
         article.setWriter(multi.getParameter("writer"));
         article.setEmail(multi.getParameter("email"));
@@ -44,17 +45,16 @@ public class writeFormProAction  implements SuperAction{
 		article.setRe_level(Integer.parseInt(multi.getParameter("re_level")));
 		article.setContent(multi.getParameter("content"));
 		article.setIp(request.getRemoteAddr());
-		
 		article.setCt(multi.getContentType("save"));
 		article.setOrg(multi.getOriginalFileName("save"));
 		article.setSys(multi.getFilesystemName("save"));
 
-        dao dbPro = dao.getInstance();
+        itemqboardDAO dbPro = itemqboardDAO.getInstance();
         dbPro.insertArticle(article);
         } catch (IOException e){
          e.printStackTrace();
         }
 
-        return "/imageboard/writeFormPro.jsp";
+        return "/mall/itemqboard/itemqwriteFormPro.jsp";
 	}
 }

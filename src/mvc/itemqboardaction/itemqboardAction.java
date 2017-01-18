@@ -1,4 +1,4 @@
-package img.action;
+package mvc.itemqboardaction;
 
 import java.util.Collections;
 import java.util.List;
@@ -6,9 +6,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import imageboard.dao;
+import mall.DAO.itemqboardDAO;
+import mvc.action.SuperAction;
 
-public class listAction implements SuperAction {
+public class itemqboardAction implements SuperAction {
 	public String executeAction(HttpServletRequest request, HttpServletResponse response){
     
     String pageNum = request.getParameter("pageNum");//페이지 번호
@@ -24,8 +25,7 @@ public class listAction implements SuperAction {
     int number=0;
 
     List articleList = null;
-    List articleList2 = null;
-    dao dbPro = dao.getInstance();
+    itemqboardDAO dbPro = itemqboardDAO.getInstance();
     try {
 		count = dbPro.getArticleCount();
 	} catch (Exception e) {
@@ -41,15 +41,6 @@ public class listAction implements SuperAction {
     } else {
         articleList = Collections.EMPTY_LIST;
     }
-    if (count > 0) {
-        try {
-			articleList2 = dbPro.getArticles2(startRow, endRow);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    } else {
-        articleList2 = Collections.EMPTY_LIST;
-    }
 
 	number=count-(currentPage-1)*pageSize;
     request.setAttribute("currentPage", new Integer(currentPage));
@@ -59,7 +50,6 @@ public class listAction implements SuperAction {
     request.setAttribute("pageSize", new Integer(pageSize));
 	request.setAttribute("number", new Integer(number));
 	request.setAttribute("articleList", articleList);
-	request.setAttribute("articleList2", articleList2);
-    return "imageboard/list.jsp";
+    return "/mall/itemqboard/itemqboard.jsp";
 	}
 }

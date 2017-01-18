@@ -1,18 +1,18 @@
-<%@ page contentType = "text/html; charset=euc-kr" %>
+<%@ page contentType = "text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
-<title>°Ô½ÃÆÇ</title>
+<title>ê²Œì‹œíŒ</title>
 </head>
 
 <body>
-<center ><b>±Û¸ñ·Ï(ÀüÃ¼ ±Û:${count})</b>
+<center ><b>ê¸€ëª©ë¡(ì „ì²´ ê¸€:${count})</b>
 <table width="700">
   <tr>
     <td align="right" >
-       <a href="/jsp/writeForm.IMG">±Û¾²±â</a>
+       <a href="/mall/itemqwriteForm.mall">ê¸€ì“°ê¸°</a>
     </td>
   </tr>
 </table>
@@ -21,7 +21,7 @@
 <table width="700" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center">
-      °Ô½ÃÆÇ¿¡ ÀúÀåµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.
+      ê²Œì‹œíŒì— ì €ìž¥ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.
     </td>
   </tr>
 </table>
@@ -30,11 +30,11 @@
 <c:if test="${count > 0}">
 <table border="1" width="700" cellpadding="0" cellspacing="0" align="center"> 
     <tr height="30" > 
-      <td align="center"  width="50"  >¹ø È£</td> 
-      <td align="center"  width="250" >Á¦   ¸ñ</td> 
-      <td align="center"  width="100" >ÀÛ¼ºÀÚ</td>
-      <td align="center"  width="150" >ÀÛ¼ºÀÏ</td> 
-      <td align="center"  width="50" >Á¶ È¸</td> 
+      <td align="center"  width="50"  >ë²ˆ í˜¸</td> 
+      <td align="center"  width="250" >ì œ   ëª©</td> 
+      <td align="center"  width="100" >ìž‘ì„±ìž</td>
+      <td align="center"  width="150" >ìž‘ì„±ì¼</td> 
+      <td align="center"  width="50" >ì¡° íšŒ</td> 
       <td align="center"  width="100" >IP</td>    
     </tr>
 
@@ -53,7 +53,7 @@
 	    <img src="images/level.gif" width="${5 * article.re_level}" height="16">
 	  </c:if>
            
-      <a href="/jsp/content.IMG?num=${article.num}&pageNum=${currentPage}">
+      <a href="/mall/itemqcontent.mall?num=${article.num}&pageNum=${currentPage}">
           ${article.subject}</a> 
           <c:if test="${article.readcount >= 20}">
             <img src="images/hot.gif" border="0"  height="16">
@@ -82,23 +82,23 @@
    </c:if> 
           
    <c:if test="${startPage > 10}">
-        <a href="/list.IMG?pageNum=${startPage - 10 }">[ÀÌÀü]</a>
+        <a href="/mall/itemqboard.mall?pageNum=${startPage - 10 }">[ì´ì „]</a>
    </c:if>
 
    <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/jsp/list.IMG?pageNum=${i}">[${i}]</a>
+       <a href="/mall/itemqboard.mall?pageNum=${i}">[${i}]</a>
    </c:forEach>
 
    <c:if test="${endPage < pageCount}">
-        <a href="/list.IMG?pageNum=${startPage + 10}">[´ÙÀ½]</a>
+        <a href="/mall/mall/itemqboard?pageNum=${startPage + 10}">[ë‹¤ìŒ]</a>
    </c:if>
 <br/>
 <br/>
 </c:if>
 <table border-collapse: separate >
   <c:if test="${count > 0}">
-<c:forEach var="article2" items="${articleList2}">
-      <td  align="center" ><a href="/jsp/content.IMG?num=${article2.num}&pageNum=${currentPage}"><img src="/jsp/save/${article2.sys}" width=66.5px, height=40px  /></a></td> 
+<c:forEach var="article" items="${articleList}">
+      <td  align="center" ><a href="/mall/itemqcontent.mall?num=${article.num}&pageNum=${currentPage}"><img src="/mall/save/${article.sys}" width=66.5px, height=40px  /></a></td> 
 </c:forEach>
 </c:if>
 </table>
