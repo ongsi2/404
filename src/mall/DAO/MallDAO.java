@@ -9,7 +9,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import mall.DTO.member;
+import mall.DTO.MallDTO;
+
 
 
 
@@ -35,7 +36,7 @@ public class MallDAO {
 		return ds.getConnection();
 	}
 	
-	public void insertLogin(member log){
+	public void insertLogin(MallDTO log){
   	  try{
   		  conn=getConnection();
   		  pstmt = conn.prepareStatement("insert into member(name,id,pw,mail,mailaddress,zipcode,address,address2,mobile,phone,phone2,phone3,point,grade,reg_date) "
@@ -51,7 +52,7 @@ public class MallDAO {
   		  pstmt.setString(9, log.getMobile());
   		  pstmt.setString(10, log.getPhone2());
   		  pstmt.setString(11, log.getPhone3());
-  		  pstmt.setString(12, log.getPhone());
+  		  pstmt.setString(12, log.getPhone1());
   		  pstmt.setInt(13, log.getPoint());
   		  pstmt.setString(14, log.getGrade());
   	  	  pstmt.setTimestamp(15, log.getReg_date());
