@@ -97,7 +97,7 @@ public class MallDAO {
 				 
 				 if(rs.next()){
 					 mem=new member();
-					 mem.seId(rs.getString("id"));
+					 mem.setId(rs.getString("id"));
 					 mem.setPw(rs.getString("pw"));
 					 mem.setMail(rs.getString("mail"));  
 					 mem.setMailaddress(rs.getString("mailaddress"));
