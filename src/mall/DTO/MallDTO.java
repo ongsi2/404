@@ -27,6 +27,7 @@ public class MallDTO {
     private String item_type;	// 상품 유형
     private int item_stock;	// 재고		//int
     
+    
    private int item_amount;	// 상품 주문 수량 // int
    private String status;		// 주문 상태
    private String item_cancel;	// 주문 취소 여부
@@ -34,6 +35,10 @@ public class MallDTO {
    private int item_patment;	// 실 결제액 //int
    private Timestamp delivery_date;	// 배송일
    private String ordernum;	// 주문 번호
+  
+   private String ct;		// 상품문의게시판 파일 타입
+   private String org;		
+   private String sys;
    
    private int money;		// 실제 결제액	// int
    
@@ -71,6 +76,7 @@ public class MallDTO {
    
    private String item_size;
    private Timestamp cz_date;		// 등록 일 
+   
 public String getName() {
 	return name;
 }
@@ -244,6 +250,24 @@ public String getOrdernum() {
 }
 public void setOrdernum(String ordernum) {
 	this.ordernum = ordernum;
+}
+public String getCt() {
+	return ct;
+}
+public void setCt(String ct) {
+	this.ct = ct;
+}
+public String getOrg() {
+	return org;
+}
+public void setOrg(String org) {
+	this.org = org;
+}
+public String getSys() {
+	return sys;
+}
+public void setSys(String sys) {
+	this.sys = sys;
 }
 public int getMoney() {
 	return money;
@@ -437,8 +461,4 @@ public Timestamp getCz_date() {
 public void setCz_date(Timestamp cz_date) {
 	this.cz_date = cz_date;
 }
-   
-   
 }
-    
-    
