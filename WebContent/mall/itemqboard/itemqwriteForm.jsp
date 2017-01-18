@@ -11,7 +11,7 @@
 <body>  
 <center><b>글쓰기</b>
 <br>
-<form method="post" name="writeform" action="/mall/itemqwritePro.mall" onsubmit="return writeSave()" enctype="multipart/form-data">
+<form method="post" name="writeform" action="/mall/itemqwriteFormPro.mall" onsubmit="return writeSave()" enctype="multipart/form-data">
 <input type="hidden" name="num" value="${num}">
 <input type="hidden" name="ref" value="${ref}">
 <input type="hidden" name="re_step" value="${re_step}">

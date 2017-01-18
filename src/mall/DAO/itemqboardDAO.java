@@ -137,9 +137,9 @@ public class itemqboardDAO {
 							article.setRe_level(rs.getInt("re_level"));
 							article.setContent(rs.getString("content"));
 							article.setIp(rs.getString("ip"));
-							article.setIp(rs.getString("ct"));
-							article.setIp(rs.getString("orgname"));
-							article.setIp(rs.getString("sysname"));
+							article.setCt(rs.getString("ct"));
+							article.setOrg(rs.getString("orgname"));
+							article.setSys(rs.getString("sysname"));
 							articleList.add(article); 
 						}while(rs.next());
 					}

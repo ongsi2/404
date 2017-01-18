@@ -11,38 +11,38 @@ import java.io.IOException;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import imageboard.dao;
-import imageboard.dto;
+import mall.DAO.itemqboardDAO;
+import mall.DTO.MallDTO;
+import mvc.action.SuperAction;
 
-public class updateProAction implements SuperAction{
+public class itemqupdateProAction implements SuperAction{
 	
     public String executeAction( HttpServletRequest request, HttpServletResponse response){
     	String pageNum = request.getParameter("pageNum");
     	String path = request.getRealPath("save");
 		int max = 1024*1024*10;
-		String enc="euc-kr";
+		String enc="UTF-8";
 		DefaultFileRenamePolicy df =new DefaultFileRenamePolicy();
         try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
         try{
         MultipartRequest multi = new MultipartRequest(request, path, max, enc, df);
         File save = multi.getFile("save");
-        	dto article = new dto();
+        MallDTO article = new MallDTO();
         	article.setNum(Integer.parseInt(multi.getParameter("num")));
         	article.setWriter(multi.getParameter("writer"));
         	article.setEmail(multi.getParameter("email"));
         	article.setSubject(multi.getParameter("subject"));
         	article.setContent(multi.getParameter("content"));
         	article.setPasswd(multi.getParameter("passwd"));
-        	
-    		article.setCt(multi.getContentType("save"));
+       		article.setCt(multi.getContentType("save"));
     		article.setOrg(multi.getOriginalFileName("save"));
     		article.setSys(multi.getFilesystemName("save"));
      
-    		dao dbPro = dao.getInstance();
+    		itemqboardDAO dbPro = itemqboardDAO.getInstance();
 			int check;
 			check = dbPro.updateArticle(article);
 	        request.setAttribute("check", new Integer(check));
@@ -51,7 +51,7 @@ public class updateProAction implements SuperAction{
 		}
         
         request.setAttribute("pageNum", new Integer(pageNum));
-        return "/imageboard/updatePro.jsp";
+        return "/mall/itemqboard/itemqupdatePro.jsp";
     }
 
 }

@@ -5,14 +5,15 @@ import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import imageboard.dao;
+import mall.DAO.itemqboardDAO;
+import mvc.action.SuperAction;
 
-public class deleteProAction implements SuperAction{
+public class itemqdeleteProAction implements SuperAction{
 	
     public String executeAction( HttpServletRequest request, HttpServletResponse response) {
 
         try {
-			request.setCharacterEncoding("euc-kr");
+			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
@@ -21,7 +22,7 @@ public class deleteProAction implements SuperAction{
         String pageNum = request.getParameter("pageNum");
         String passwd = request.getParameter("passwd");
 	    
-        dao dbPro = dao.getInstance();
+        itemqboardDAO dbPro = itemqboardDAO.getInstance();
         int check;
 		try {
 			check = dbPro.deleteArticle(num, passwd);
@@ -31,7 +32,7 @@ public class deleteProAction implements SuperAction{
 		}
         request.setAttribute("pageNum", new Integer(pageNum));
     	    	
-    	return "/imageboard/deletePro.jsp";
+    	return "/mall/itemqboard/itemqdeletePro.jsp";
     }
 
 }

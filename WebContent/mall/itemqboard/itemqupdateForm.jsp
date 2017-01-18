@@ -1,25 +1,25 @@
-<%@ page contentType = "text/html; charset=euc-kr" %>
+<%@ page contentType = "text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
-<title>°Ô½ÃÆÇ</title>
+<title>ê²Œì‹œíŒ</title>
 <script language="JavaScript" src="script.js"></script>
 </head>
 
 <body>  
-<center><b>±Û¼öÁ¤</b>
+<center><b>ê¸€ìˆ˜ì •</b>
 <br>
-<form method="post" name="writeform" action="/jsp/updatePro.IMG?pageNum=${pageNum}" onsubmit="return writeSave()"enctype="multipart/form-data">
+<form method="post" name="writeform" action="/mall/itemqupdatePro.mall?pageNum=${pageNum}" onsubmit="return writeSave()"enctype="multipart/form-data">
 <table width="400" border="1" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td  width="70" align="center">ÀÌ ¸§</td>
+    <td  width="70" align="center">ì´ ë¦„</td>
     <td align="left" width="330">
        <input type="text" size="10" maxlength="10" name="writer" value="${article.writer}">
 	   <input type="hidden" name="num" value="${article.num}"></td>
   </tr>
   <tr>
-    <td  width="70" align="center" >Á¦ ¸ñ</td>
+    <td  width="70" align="center" >ì œ ëª©</td>
     <td align="left" width="330">
        <input type="text" size="40" maxlength="50" name="subject" value="${article.subject}"></td>
   </tr>
@@ -29,26 +29,26 @@
        <input type="text" size="40" maxlength="30" name="email" value="${article.email}"></td>
   </tr>
 <tr>
-	<td width="70" align="center">»çÁøÃ·ºÎ</td>
+	<td width="70" align="center">ì‚¬ì§„ì²¨ë¶€</td>
 	<td width="330"><input type="file" name="save" /></td>
 </tr>
   <tr>
-    <td  width="70" align="center" >³» ¿ë</td>
+    <td  width="70" align="center" >ë‚´ ìš©</td>
     <td align="left" width="330">
      <textarea name="content" rows="13" cols="40">${article.content}</textarea></td>
   </tr>
   <tr>
-    <td  width="70" align="center" >ºñ¹Ð¹øÈ£</td>
+    <td  width="70" align="center" >ë¹„ë°€ë²ˆí˜¸</td>
     <td align="left" width="330" >
      <input type="password" size="8" maxlength="12" name="passwd">
 	 </td>
   </tr>
   <tr>      
    <td colspan=2 align="center"> 
-     <input type="submit" value="±Û¼öÁ¤" >  
-     <input type="reset" value="´Ù½ÃÀÛ¼º">
-     <input type="button" value="¸ñ·Ïº¸±â" 
-       onclick="document.location.href='/jsp/list.IMG?pageNum=${pageNum}'">
+     <input type="submit" value="ê¸€ìˆ˜ì •" >  
+     <input type="reset" value="ë‹¤ì‹œìž‘ì„±">
+     <input type="button" value="ëª©ë¡ë³´ê¸°" 
+       onclick="document.location.href='/mall/itemqboard.mall?pageNum=${pageNum}'">
    </td>
  </tr>
  </table>

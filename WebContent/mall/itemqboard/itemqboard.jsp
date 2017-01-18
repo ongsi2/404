@@ -35,7 +35,6 @@
       <td align="center"  width="100" >작성자</td>
       <td align="center"  width="150" >작성일</td> 
       <td align="center"  width="50" >조 회</td> 
-      <td align="center"  width="100" >IP</td>    
     </tr>
 
    <c:forEach var="article" items="${articleList}">
@@ -52,9 +51,10 @@
 	  <c:if test="${article.re_level == 0}">
 	    <img src="images/level.gif" width="${5 * article.re_level}" height="16">
 	  </c:if>
-           
+       <a href="/mall/itemqcontent.mall?num=${article.num}&pageNum=${currentPage}">
+       <img src="/mall/save/${article.sys}" width=66.5px, height=40px  /></a>
       <a href="/mall/itemqcontent.mall?num=${article.num}&pageNum=${currentPage}">
-          ${article.subject}</a> 
+          ${article.subject}</a>
           <c:if test="${article.readcount >= 20}">
             <img src="images/hot.gif" border="0"  height="16">
 		  </c:if>
@@ -65,7 +65,6 @@
     <td align="center"  width="150">${article.reg_date}
 	</td>
     <td align="center"  width="50">${article.readcount}</td>
-    <td align="center" width="100" >${article.ip}</td>
   </tr>
   </c:forEach>
 </table>
@@ -95,13 +94,8 @@
 <br/>
 <br/>
 </c:if>
-<table border-collapse: separate >
-  <c:if test="${count > 0}">
-<c:forEach var="article" items="${articleList}">
-      <td  align="center" ><a href="/mall/itemqcontent.mall?num=${article.num}&pageNum=${currentPage}"><img src="/mall/save/${article.sys}" width=66.5px, height=40px  /></a></td> 
-</c:forEach>
-</c:if>
-</table>
 </center>
 </body>
 </html>
+
+
