@@ -131,11 +131,11 @@ public String getMobile() {
 public void setMobile(String mobile) {
 	this.mobile = mobile;
 }
-public String getPhone1() {
-	return phone1;
+public String getPhone() {
+	return phone;
 }
-public void setPhone1(String phone1) {
-	this.phone1 = phone1;
+public void setPhone(String phone) {
+	this.phone = phone;
 }
 public String getPhone2() {
 	return phone2;
