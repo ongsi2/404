@@ -4,7 +4,7 @@
 
 
 <c:if test="${result==true }">
-<c:redirect url="/main.mall"/>
+<c:redirect url="/success.mall"/>
 </c:if>
 
 <c:if test="${result==false }">
