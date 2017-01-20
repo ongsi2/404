@@ -110,7 +110,7 @@ function openconfirm(userinput){
  alert("아이디를 입력하세요");
  return;
  }
- url="confirm.jsp?id="+userinput.id.value;
+ url="confirm.mall?id="+userinput.id.value;
  open(url, "confirm","toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300");
 }
 </script>
