@@ -145,6 +145,76 @@ public class MallDAO {
 	            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 	        }
    }
+		 
+		 
+		 public boolean deletemem(String id, String pw){
+			 boolean result=false;
+			 String dbpw="";
+			 try{
+				 conn=getConnection();
+				 pstmt=conn.prepareStatement("select * from member where id=? and pw=?");
+				 pstmt.setString(1, id);
+				 pstmt.setString(2, pw);
+				 rs=pstmt.executeQuery();
+				 
+				 if(rs.next()){
+					 dbpw=rs.getString("pw");
+			  	 if(dbpw.equals(pw)){
+			  		 pstmt=conn.prepareStatement("delete from member where pw=?");
+			  		 pstmt.setString(1, pw);
+			  		 pstmt.executeUpdate();
+			  		 result=true;
+			  	 }
+				 }
+				 }catch(Exception e){
+					 e.printStackTrace();
+				 }finally{
+					 if(rs!=null){try {rs.close();}catch(SQLException ex){}}
+					 if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+			         if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+				 }
+		 return result;
+		 }
+		 
+		 
+		 public boolean confirmID(String id){
+			 boolean result =false;
+			 try{
+				 conn=getConnection();
+				 pstmt=conn.prepareStatement("select * from member where id=?");
+				 pstmt.setString(1, id);
+				 rs=pstmt.executeQuery();
+						 if(rs.next()){
+							 result=true;
+						 }
+			 }catch(Exception e){
+							 e.printStackTrace();
+						 }finally{
+							 if(rs!=null){try {rs.close();}catch(SQLException ex){}}
+							 if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+					         if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+			 }
+			 return result;
+		 }
+		 
+		 
+		
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 }	//end
 	
 	

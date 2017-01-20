@@ -46,7 +46,7 @@ public class joinformProAction implements SuperAction{
 		
 		
 		
-		return "mall/hlogin/joinformPro.jsp";
+		return "/mall/hlogin/joinformPro.jsp";
 	}
 
 }

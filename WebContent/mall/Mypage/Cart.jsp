@@ -15,32 +15,32 @@
        </table>
         <table align="left" width=200  border="1">
        <tr>
-        <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/jsmall/Mypage.mall">
+        <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/mall/Mypage.mall">
              내 정보 </a>
        </td>
       </tr>
       <tr > 
-        <td align="center" bgcolor="${gg}" width="110" height="100" border="1"><a href="/jsmall/Order.mall">
+        <td align="center" bgcolor="${gg}" width="110" height="100" border="1"><a href="/mall/Order.mall">
              주문 내역 </a>
        </td>
        </tr>
        <tr > 
-         <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/jsmall/Delivery.mall">
+         <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/mall/Delivery.mall">
          배송조회 </a>
        </td>
        </tr>
        <tr > 
-         <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/jsmall/Cart.mall">
+         <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/mall/Cart.mall">
          내가 찜한 목록 </a>
        </td>
        </tr>
        <tr > 
-         <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/jsmall/PoCu.mall">
+         <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/mall/PoCu.mall">
          포인트&쿠폰 </a>
        </td>
        </tr>
        <tr > 
-        <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/jsmall/Complain.mall">
+        <td align="center" bgcolor="${gg}" width="110" height="100" border="1" ><a href="/mall/Complain.mall">
         1:1문의  </a>
        </td>
        </tr>
@@ -81,7 +81,7 @@
 body { background-color: #FFFFFF;}
 img { position:absolute; top:220px; left:1000px; border-style: solid;}
 </style>
-<img src="/jsmall/save/찜리스트.jpg" width="600" height="450"/>
+<img src="/mall/save/찜리스트.jpg" width="600" height="450"/>
     
 <hr width="100%" size="3" color="${bodyback_c}" noshade> 
      <br /><br />
@@ -89,12 +89,12 @@ img { position:absolute; top:220px; left:1000px; border-style: solid;}
       <center>
       <div class="bottom_menu">
 
-            <a href="/jsmall/main.mall">홈</a> |
-            <a href="http://cs.coupang.com/customerCenter/notice/list">공지사항</a> |
-            <a href="http://cs.coupang.com/customerCenter/voiceOfCustomer">문의사항</a> |
-            <a href="http://www.coupang.com/np/policies/terms">이용약관</a> |
-            <a href="http://www.coupang.com/np/policies/privacy">개인정보 처리방침</a> |
-            <a href="http://www.coupang.com/np/safety">고객센터</a>
+            <a href="/mall/main.mall">홈</a> |
+            <a href=" ">공지사항</a> |
+            <a href=" ">문의사항</a> |
+            <a href=" ">이용약관</a> |
+            <a href=" ">개인정보 처리방침</a> |
+            <a href=" ">고객센터</a>
         </div>
        
         <span>법인명(상호): 로스트로드 08082</span> &nbsp;

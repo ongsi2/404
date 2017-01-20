@@ -1,0 +1,181 @@
+mall       
+
+main
+member
+cart
+item
+board
+faqboard
+order
+admin
+sales
+cs
+mypage
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+member	// 회원정보
+
+name
+id
+pw
+mail
+mailaddress	// 이메일 호스트 주소
+zipcode		// 우편번호
+address		// 주소
+address2		// 상세주소
+mobile 		// 통신사
+phone1
+phone2
+phone3
+point		//int
+grade		// 회원 등급
+reg_date
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+item		// 상품 정보
+
+item_num	// 상품 번호
+item_name
+item_price	//int
+item_img
+item_upload	// 등록일
+item_type	// 상품 유형
+item_stock	// 재고		//int
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+shopping
+
+id
+item_img
+item_num	//int
+item_name
+item_type	// 상품 유형
+item_amount	// 상품 주문 수량 // int
+item_price	// int
+status		// 주문 상태
+zipcode
+address
+item_cancel	// 주문 취소 여부
+item_delivery	// 주문 배송 여부
+point		//int
+item_patment	// 실 결제액 //int
+delivery_date	// 배송일
+ordernum	// 주문 번호
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+salespage	// 매출 관리
+
+ordernum 	// 주문 번호 
+name
+money		// 실제 결제액	// int
+reg_date	// 결제일
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+review
+
+num		// 게시글 번호 // int primary key
+writer
+subject
+email
+content
+passwd
+reg_Date
+readcount	//int
+ip
+ref		// 게시글 그룹번호	//int
+re_step		// 게시글 계층 정렬 번호	//int
+re_level	// 게시글 계층 번호	//int
+item_number	// 게시 대상 상품 번호
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+q_board
+
+num	// int primary key	
+writer
+subject
+email
+content
+passwd
+reg_date
+readcount	//int
+ip
+ref		// 게시글 그룹번호	//int
+re_step		// 게시글 계층 정렬 번호	//int
+re_level	// 게시글 계층 번호	//int
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+ordercheck
+
+order_num	// 주문 번호
+name
+phone		// 주문자 전화번호
+zipcode		// 주문자 우편번호
+address		// 주문자 주소
+s_name		// 받는이 이름
+s_phone		// 받는이 전화번호
+s_zipcode	// 받는이 우편번호
+s_address	// 받는이 주소
+add_phone	// 받는이 예비 전화번호
+memo1		// 배송 메모 1
+memo2		// 배송 메모 2
+item_info	// 주문 상품 정보
+price		// 총 결제액	//int
+money		// 실 결제액	//int
+select_bank	// 무통장 입금 은행
+reg_date	// 결제일시
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+grademanager	// 회원 관리
+
+id
+changegrade	// 회원 등급
+basegrade	// 초기 등급
+reason		// 등급 변경 사유		
+onstop		// 등급 변경일
+outstop		// 정지 기간
+type		// 등급 변경 유형
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+faqboard 	게시판 - 자주 하는 질문
+
+num // int primary key	
+writer
+subject
+email
+content
+passwd
+reg_date
+readcount // int
+ip
+ref	//int
+re_step		//int
+re_level	//int
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+noticeboard	공지사항게시판
+
+num // int primary key	
+writer
+subject
+email
+content
+passwd
+reg_date
+readcount // int
+ip
+ref	//int
+re_step		//int
+re_level	//int
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+cart	// 장바구니
+
+num	 // int primary key	
+type
+id
+item_img
+item_number
+item_name
+item_type
+item_size
+item_amount	// 상품 수량 //int
+item_price	//int
+cz_date		// 등록 일 
+
+
+
+
+
+

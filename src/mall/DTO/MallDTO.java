@@ -19,11 +19,11 @@ public class MallDTO {
     private String grade;		// 회원 등급
     private Timestamp reg_date;
 
-    private String item_num;	// 상품 번호
+    private int item_num;	// 상품 번호
     private String item_name;
     private int item_price;	//int
     private String item_img;
-    private String item_upload;	// 등록일
+    private Timestamp item_upload;	// 등록일
     private String item_type;	// 상품 유형
     private int item_stock;	// 재고		//int
     
@@ -167,10 +167,10 @@ public Timestamp getReg_date() {
 public void setReg_date(Timestamp reg_date) {
 	this.reg_date = reg_date;
 }
-public String getItem_num() {
+public int getItem_num() {
 	return item_num;
 }
-public void setItem_num(String item_num) {
+public void setItem_num(int item_num) {
 	this.item_num = item_num;
 }
 public String getItem_name() {
@@ -191,10 +191,10 @@ public String getItem_img() {
 public void setItem_img(String item_img) {
 	this.item_img = item_img;
 }
-public String getItem_upload() {
+public Timestamp getItem_upload() {
 	return item_upload;
 }
-public void setItem_upload(String item_upload) {
+public void setItem_upload(Timestamp item_upload) {
 	this.item_upload = item_upload;
 }
 public String getItem_type() {
