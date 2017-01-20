@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <body>
-<form name="form" action="" method="post">
+<form name="form" action="loginPro.mall" method="post">
 <h2>메인페이지</h2>
 
 <style type="text/css">
