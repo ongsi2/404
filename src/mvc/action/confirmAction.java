@@ -19,7 +19,7 @@ public class confirmAction implements SuperAction{
 		boolean check=mem.confirm("id");
 		
 		
-		return "mall/hlogin/confirmAction";
+		return "mall/hlogin/confirm";
 	}
 
 }
