@@ -103,6 +103,17 @@
 <input type="text" name="phone2">-<input type="text" name="phone3" >   
  </td>
  </tr>     
+<script language="JavaScript">
+
+function openconfirm(userinput){
+ if(userinput.id.value==""){
+ alert("아이디를 입력하세요");
+ return;
+ }
+ url="confirm.jsp?id="+userinput.id.value;
+ open(usl, "confirm","toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300");
+}
+</script>
 
 <tr ><td colspan="3" align="center" >
 <input type="submit" value="확인">

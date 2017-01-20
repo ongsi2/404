@@ -5,6 +5,7 @@
 
 <body>
 <h2>회원탈퇴</h2>
+
 <form method="post" action="main.mall">
 <c:if test="${check==true}">
 <tr><font size="4">탈퇴성공</font>
