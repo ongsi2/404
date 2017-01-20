@@ -19,7 +19,7 @@ public class confirmAction implements SuperAction{
 		boolean check=mem.confirm("id");
 		
 		request.setAttribute("id", id);
-		
+		request.setAttribute("check", check);
 		
 		
 		return "mall/hlogin/confirm.jsp";
