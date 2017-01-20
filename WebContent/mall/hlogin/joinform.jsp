@@ -111,7 +111,7 @@ function openconfirm(userinput){
  return;
  }
  url="confirm.jsp?id="+userinput.id.value;
- open(usl, "confirm","toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300");
+ open(url, "confirm","toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300");
 }
 </script>
 
