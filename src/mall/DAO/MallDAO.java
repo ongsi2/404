@@ -198,7 +198,25 @@ public class MallDAO {
 		 }
 		 
 		 
-		
+		public boolean confirm(String id){
+			boolean result=false;
+			try{
+				conn=getConnection();
+				pstmt=conn.prepareStatement("select * from member where id=?");
+				pstmt.setString(1, id);
+				rs=pstmt.executeQuery();
+				if(rs.next()){
+					result=true;
+				}
+			}catch (Exception e){
+	    		e.printStackTrace();
+	    	}finally{
+	    		if(rs !=null){try {rs.close();}catch(SQLException s){}}
+	    		if(pstmt !=null){try{pstmt.close();}catch(SQLException s){}}
+	    		if(conn !=null){try{conn.close();}catch(SQLException s){}}
+	    	}
+	    	return result;
+		}
 		 
 		 
 		 
