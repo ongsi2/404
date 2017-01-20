@@ -14,7 +14,8 @@
 
 <tr>
 <td><font size="4">아이디</font></td>
-<td> <input type="text" name="id"></td>
+<td> <input type="text" name="id">
+<input type="button" value="중복확인" onclick="openconfirm(this.form)"></td> 
 </tr>
 
 
