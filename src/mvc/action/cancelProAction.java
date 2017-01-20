@@ -2,6 +2,7 @@ package mvc.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import mall.DAO.MallDAO;
 
@@ -11,7 +12,8 @@ public class cancelProAction implements SuperAction {
 		public String executeAction(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 			
 					
-					 String id=request.getParameter("id");
+			      HttpSession session= request.getSession();
+			     String id=(String)session.getAttribute("loginId");
 					 String pw=request.getParameter("pw");
 					 
 					 MallDAO dao=MallDAO.getInstance();
