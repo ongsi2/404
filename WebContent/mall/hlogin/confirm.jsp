@@ -6,12 +6,12 @@
 <html>
 <body>
 
-<table width="270" border="0" cellspacing="0" cellpadding="5">
+<table width="300" border="0" cellspacing="0" cellpadding="5">
 <form name="checkForm" method="post" action="confirm.mall">
 <c:if test="${result==true}">
   <tr> 
-    <td height="39">${id}이미 사용중인 아이디입니다.</td>
-     <input type="button" value="닫기" onclick="setid()">
+    <td height="39">${id}이미 사용중인 아이디입니다.
+     <input type="button" value="닫기" onclick="setid()"></td>
   </tr>     
        
 </table>
