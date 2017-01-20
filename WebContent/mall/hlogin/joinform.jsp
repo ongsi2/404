@@ -111,7 +111,7 @@ function openconfirm(userinput){
  return;
  }
  url="confirm.mall?id=" + userinput.id.value;
- open(url, "confirm , toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no,height=100, width=300");
+ open(url, "confirm , toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, height=100, width=300");
 }
 </script>
 
