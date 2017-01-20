@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <body>
 <h2>회원탈퇴</h2>
-<form action="canclePro.mall" method="post">
+<form action="cancelPro.mall" method="post">
 <table border="1">
 <tr>
 <td><font size="4">회원탈퇴</font>
