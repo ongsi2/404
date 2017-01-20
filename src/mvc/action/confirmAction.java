@@ -18,6 +18,9 @@ public class confirmAction implements SuperAction{
 		MallDAO mem=MallDAO.getInstance();
 		boolean check=mem.confirm("id");
 		
+		request.setAttribute("id", id);
+		
+		
 		
 		return "mall/hlogin/confirm.jsp";
 	}
