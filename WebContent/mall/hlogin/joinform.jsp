@@ -2,9 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<script language="JavaScript">
+
+function openconfirm(userinput){
+ if(userinput.id.value==""){
+ alert("아이디를 입력하세요");
+ return;
+ }
+ url="confirm.mall?id=" + userinput.id.value;
+ open(url, "confirm" , "toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, height=100, width=300");
+}
+</script>
+
+
 <body >
 <h2>회원가입</h2>
-<form action="joinformPro.mall" method="post">
+<form action="joinformPro.mall" name="form" method="post">
 <table border="1">
 
 <tr>
@@ -103,21 +117,11 @@
 <input type="text" name="phone2">-<input type="text" name="phone3" >   
  </td>
  </tr>     
-<script language="JavaScript">
 
-function openconfirm(userinput){
- if(userinput.id.value==""){
- alert("아이디를 입력하세요");
- return;
- }
- url="confirm.mall?id=" + userinput.id.value;
- open(url, "confirm , toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, height=100, width=300");
-}
-</script>
 
 <tr ><td colspan="3" align="center" >
 <input type="submit" value="확인">
-<input type="button" value="취소" onclick="window.location='login.mall'">
+<input type="button" value="취소" onclick="window.location='main.mall'">
 </tr></td>
 
 
