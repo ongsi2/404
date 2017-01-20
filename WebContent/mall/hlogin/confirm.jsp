@@ -11,6 +11,7 @@
 <c:if test="${result==true}">
   <tr> 
     <td height="39">${id}이미 사용중인 아이디입니다.</td>
+     <input type="button" value="닫기" onclick="setid()">
   </tr>     
        
 </table>
