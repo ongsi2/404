@@ -24,23 +24,22 @@ ${id} 이미사용중인 아이디입니다.</td>
 </table  width="300">
 
 <p>입력하신 ${id }는 사용하실수 <br/>있는 아이디 입니다.</p>
+
 <input type="button" value="닫기" onclick="setid()">
-</form>
-
-<table>
-
-</table></c:if>
-
-
-</body>
-</html>
-
 <script language="javascript">
 function setid()
 {
-	opener.document.userinput.id.value="${id}";
+	
 	self.close();
 	
 	}
 
 </script>
+</form>
+</c:if>
+
+
+</body>
+</html>
+
+
