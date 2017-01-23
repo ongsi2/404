@@ -12,7 +12,7 @@ div { position:absolute; top:20px; right:110px;}
 </style>
 <div class="login_tab">
 <td><input type="text" name="id" placeholder="아이디"> </td>
-<td><input type="text" name="pw" placeholder="비밀번호"></td>
+<td><input type="password" name="pw" placeholder="비밀번호"></td>
 <tr>
 <td><input type="submit" value="로그인"></input>
 </td>
