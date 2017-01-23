@@ -138,7 +138,6 @@ function checkmailaddy(){
  </td>
  </tr>     
 
-
 <tr ><td colspan="3" align="center" >
 <input type="submit" value="확인">
 <input type="button" value="취소" onclick="window.location='main.mall'">
