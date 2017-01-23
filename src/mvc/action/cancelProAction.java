@@ -13,17 +13,19 @@ public class cancelProAction implements SuperAction {
 			
 					
 			      HttpSession session= request.getSession();
-			     String id=(String)session.getAttribute("loginId");
+			         String id=(String)session.getAttribute("loginId");
 					 String pw=request.getParameter("pw");
 					 
 					 MallDAO dao=MallDAO.getInstance();
 					 
 					 try{
 						 boolean check=dao.deletemem(id, pw);
+						 request.setAttribute("check", check);
 						 
 					 }catch(Exception e){
 						 e.printStackTrace();
 					 }
+					 
 				
 					
 					return "mall/hlogin/cancelPro.jsp";

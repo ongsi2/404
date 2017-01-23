@@ -7,17 +7,13 @@
 <h2>회원탈퇴</h2>
 
 <form method="post" action="main.mall">
-<c:if test="${check==true}">
-<tr><font size="4">탈퇴성공</font>
-<input type="submit" value="확인">
-</tr></c:if>
+<c:if test="${check==true }">
+<tr><input type="submit" value="확인">
+</tr></c:if></font>
 
-<c:if test="${check==false}">
-<script >
+<c:if test="${check==false }">
+<script>
   alert("비밀번호가 맞지 않습니다.");
   history.go(-1);
-  
-</script></c:if>
-</form>
-
-</body>
+</script></c:if> 
+</form> </body>

@@ -38,16 +38,35 @@ function openconfirm(userinput){
 <td><font size="4">비밀번호</font></td>
 <td> <input type="password" name="pw"></td>
 
+
 <tr>
+<form name="form" method="post">
 <td><font size="4">이메일</font></td>
-<td> <input type="text" name="mail">@
-<select name="mailaddress" >
-              <option>naver.com</option>
-              <option>daum.net</option>
-              <option>gmail.com</option>
-              
-              
-      </select>
+
+<script language="Javascript">
+function checkmailaddy(){
+	  if(form.mail3.value=='1'){
+		  form.mailaddress.readonly=false;
+		  form.mailaddress.value='';
+		  form.mailaddress.focus();  
+	  }else{
+		  form.mailaddress.readonly=true;
+		  form.mailaddress.value=form.mail3.value;
+	  }
+}
+</script>
+
+<form name="form" method="post">
+<td> <input type="text" name="mail">@<input name="mailaddress" type="text">
+
+<select name="mail3" onChange="checkmailaddy();"  readonly>
+  			  <option value="">선택하세요</option>
+              <option value="naver.com">naver.com</option>
+              <option value="daum.net">daum.net</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="1" >직접입력</option>
+
+      </select></form>
 </td>
 <tr >
 

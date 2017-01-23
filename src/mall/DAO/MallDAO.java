@@ -152,16 +152,16 @@ public class MallDAO {
 			 String dbpw="";
 			 try{
 				 conn=getConnection();
-				 pstmt=conn.prepareStatement("select * from member where id=? and pw=?");
+				 pstmt=conn.prepareStatement("select * from member where id=?");
 				 pstmt.setString(1, id);
-				 pstmt.setString(2, pw);
+				
 				 rs=pstmt.executeQuery();
 				 
 				 if(rs.next()){
 					 dbpw=rs.getString("pw");
 			  	 if(dbpw.equals(pw)){
-			  		 pstmt=conn.prepareStatement("delete from member where pw=?");
-			  		 pstmt.setString(1, pw);
+			  		 pstmt=conn.prepareStatement("delete from member where id=?");
+			  		 pstmt.setString(1, id);
 			  		 pstmt.executeUpdate();
 			  		 result=true;
 			  	 }
