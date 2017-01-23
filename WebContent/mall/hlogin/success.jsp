@@ -4,3 +4,4 @@
 
 <input type="button" value="탈퇴" onclick="window.location='cancel.mall'">
 <input type="button" value="수정 " onclick="window.location='modify.mall'">
+<input type="button" value="로그아웃 " onclick="window.location='logout.mall'">
