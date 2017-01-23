@@ -218,6 +218,7 @@ public class MallDAO {
 	    	return result;
 		}
 		 
+
 		 
 		 
 		 

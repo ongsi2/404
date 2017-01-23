@@ -70,10 +70,10 @@
   </c:forEach>
 </table>
 </c:if>
-
+  
 <c:if test="${count > 0}">
    <c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1)}"/>
-   <c:set var="pageBlock" value="${10}"/>
+   <c:set var="pageBlock" value="${10}" />
    <fmt:parseNumber var="result" value="${currentPage / 10}" integerOnly="true" />
    <c:set var="startPage" value="${result * 10 + 1}" />
    <c:set var="endPage" value="${startPage + pageBlock-1}"/>
