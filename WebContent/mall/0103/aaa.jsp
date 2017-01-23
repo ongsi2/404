@@ -6,7 +6,7 @@
         new daum.Postcode({
             oncomplete: function(data) {
                 var fullAddr = ''; 
-                var extraAddr = '';
+                var extraAddr = ''; // Test
 
      
                 if (data.userSelectedType === 'R') {
