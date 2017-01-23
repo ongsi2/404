@@ -57,10 +57,10 @@ function checkmailaddy(){
 </script>
 
 <form name="form" method="post">
-<td> <input type="text" name="mail">@<input name="mailaddress" type="text">
+<td > <input type="text" name="mail">@<input name="mailaddress" type="text">
 
 <select name="mail3" onChange="checkmailaddy();"  readonly>
-  			  <option value="">선택하세요</option>
+  			  <option value=""  >선택하세요</option>
               <option value="naver.com">naver.com</option>
               <option value="daum.net">daum.net</option>
               <option value="gmail.com">gmail.com</option>
